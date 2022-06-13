@@ -41,7 +41,7 @@ public class GestionVentesApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         // Il faut d'abord récupérer la description de la vue (au format FXML).
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("GestionVentes-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../view/GestionVentes-view.fxml"));
         Parent viewContent = fxmlLoader.load();
 
         // Ensuite, on la place dans une Scene...

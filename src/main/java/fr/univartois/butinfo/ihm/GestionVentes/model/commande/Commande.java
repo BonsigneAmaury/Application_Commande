@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 import fr.univartois.butinfo.ihm.GestionVentes.model.article.Article;
 import fr.univartois.butinfo.ihm.GestionVentes.model.client.Client;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 /**
  * Un objet de la classe Commande correspond à une commande d'articles.
@@ -36,7 +38,7 @@ public class Commande {
 	/**
 	 * Les lignes de commande se trouvant dans la commande.
 	 */
-	private ArrayList<LigneCommande> lignesCommande;
+	private ObservableList<LigneCommande> lignesCommande = FXCollections.observableArrayList();
 
 	/**
 	 * Le client pour qui est effectué la commande.
@@ -54,7 +56,6 @@ public class Commande {
 	 * @param client Le client associé à la commande.
 	 */
 	public Commande(Client client) {
-		lignesCommande=new ArrayList<LigneCommande>();
 		reference=nbCommandes++;
 		cloturee=false;
 		this.client=client;
