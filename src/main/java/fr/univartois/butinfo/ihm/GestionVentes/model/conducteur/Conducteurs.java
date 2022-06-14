@@ -1,134 +1,129 @@
-package conducteur;
+package fr.univartois.butinfo.ihm.GestionVentes.model.conducteur;
 
 import java.util.ArrayList;
 import java.util.List;
-import com.modeliosoft.modelio.javadesigner.annotations.mdl;
-import com.modeliosoft.modelio.javadesigner.annotations.objid;
 
-@objid ("ec68fe07-405b-4b00-a482-5d9dd8ddada6")
-public abstract class Conducteurs<T> {
-    @mdl.prop
-    @objid ("bcb063a0-223c-4e87-a1df-7b3bd760a59f")
+
+public abstract class Conducteurs {
+
     private String nom;
-
-    @mdl.propgetter
-    private String getNom() {
-        // Automatically generated method. Please do not modify this code.
-        return this.nom;
-    }
-
-    @mdl.propsetter
-    private void setNom(String value) {
-        // Automatically generated method. Please do not modify this code.
-        this.nom = value;
-    }
-
-    @mdl.prop
-    @objid ("cd5f0640-2c40-447d-bf69-54fd71143a2e")
     private String prenom;
 
-    @mdl.propgetter
+
+    private String typePermis;
+
+    //TODO mettre la list en ObservalbleList
+    private List<Conducteurs> conducteurs;
+
+    private String numeroPermis;
+
+    public Conducteurs(String nom, String prenom, String numeroPermis, String typePermis) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.numeroPermis = numeroPermis;
+        this.typePermis = typePermis;
+        this.conducteurs = new ArrayList<>();
+    }
+
+
     private String getPrenom() {
         // Automatically generated method. Please do not modify this code.
         return this.prenom;
     }
 
-    @mdl.propsetter
     private void setPrenom(String value) {
         // Automatically generated method. Please do not modify this code.
         this.prenom = value;
     }
 
-    @mdl.prop
-    @objid ("59b941a2-2d34-481f-be4a-94e695523d30")
-    private String numeroPermis;
 
-    @mdl.propgetter
     private String getNumeroPermis() {
         // Automatically generated method. Please do not modify this code.
         return this.numeroPermis;
     }
 
-    @mdl.propsetter
+
     private void setNumeroPermis(String value) {
         // Automatically generated method. Please do not modify this code.
         this.numeroPermis = value;
     }
 
-    @mdl.prop
-    @objid ("73d5a751-e59b-4e28-b9c7-babeb6c7d21a")
-    private String typePermis;
 
-    @mdl.propgetter
+
+
+    private String getNom() {
+        // Automatically generated method. Please do not modify this code.
+        return this.nom;
+    }
     private String getTypePermis() {
         // Automatically generated method. Please do not modify this code.
         return this.typePermis;
     }
-
-    @mdl.propsetter
     private void setTypePermis(String value) {
         // Automatically generated method. Please do not modify this code.
         this.typePermis = value;
     }
 
-    @mdl.prop
-    @objid ("59983950-ff1c-4a0b-8cbc-3e5243230c83")
-    private List<String> listConducteur = new ArrayList<String> ();
 
-    @mdl.propgetter
-    private List<String> getListConducteur() {
+    private List<Conducteurs> getConducteur() {
         // Automatically generated method. Please do not modify this code.
-        return this.listConducteur;
+        return this.conducteurs;
     }
 
-    @mdl.propsetter
-    private void setListConducteur(List<String> value) {
+
+
+
+    private void setNom(String value) {
         // Automatically generated method. Please do not modify this code.
-        this.listConducteur = value;
+        this.nom = value;
     }
 
-    @objid ("2d1a551e-c17c-4e02-a8a8-7aced7f326a0")
-    public boolean equals(Conducteurs Personne1) {
+    public void addConducteurs(Conducteurs c) {
+        conducteurs.add(c);
+        }
+
+
+    public void delConducteurs(Conducteurs c) {
+        conducteurs.remove(c);
     }
 
-    @objid ("56ab5213-7e79-4ecb-9945-707df5152826")
-    public Conducteurs(String nom, String prenom, String numeroPermis, String typePermis) {
+
+    public String triTypeC(Conducteurs c) {
+        //TODO tri le  type de conducteurs et affiche les commerciaux
+        //Pour accomplir des tris, vous utiliserez la méthode sort(List<T> list, Comparator
+         //       <? super T> c) de la classe Collections. Au préalable, il vous faudra définir des classes
+        //qui implémenteront l’interface Comparator<T>. Le nom de chacune de ces classes débutera par Comparateur.
+
+        return null;
     }
 
-    @objid ("acfad930-0b89-4388-940b-a8063abfd481")
-    public void addConducteur(Conducteurs c) {
+    public String triTypeL(Conducteurs c){
+        //TODO tri le type de conducteur et affiche les livreurs
+        return null;
     }
 
-    @objid ("86679309-1d04-4e0d-9e88-7bfa5445775b")
-    public void delConducteur(Conducteurs c) {
-    }
-
-    @objid ("55012fec-e852-42a8-aee1-c0eb3f79ba45")
-    public void triType(Conducteurs c) {
-    }
-
-    @objid ("fabd3161-d341-4ae8-ae10-553b7c28e3da")
     public void triAlpha(Conducteurs c) {
+        //TODO tri dans l'ordre alphabétique les conducteurs
     }
 
-    @objid ("7607cef3-5756-4607-899f-c358651e8263")
-    public String toString() {
+    public boolean equals(Conducteurs Personne1){
+        //TODO est égale une personne avec le meme prenom et nom qu'une autre personne
+        return true;
     }
 
-    @objid ("60e68c94-d5a2-4c21-b06a-28241228f520")
-    public String getNom() {
-    }
 
-    @objid ("afd18cef-6df4-492a-9e0f-379ddae7620c")
-    public String getPrenom() {
-    }
+    @Override
+        public String toString() {
+            return "Conducteurs{" +
+                    "nom='" + nom + '\'' +
+                    ", prenom='" + prenom + '\'' +
+                    ", typePermis='" + typePermis + '\'' +
+                    ", conducteurs=" + conducteurs +
+                    ", numeroPermis='" + numeroPermis + '\'' +
+                    '}';
+        }
 
-    @objid ("dbdf0744-e2e2-4bd7-a62f-b36ce5385b09")
-    public String getnumeroPermis() {
-    }
-
-    @objid ("8b9604bd-a876-4be1-a74a-851a9952ec1c")
-    public String getTypePermis() {
-    }
 
 }
+
+
