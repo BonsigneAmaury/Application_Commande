@@ -1,7 +1,9 @@
 package fr.univartois.butinfo.ihm.GestionVentes.model.conducteur;
 
-import java.util.ArrayList;
+import javafx.collections.ObservableList;
+
 import java.util.List;
+import java.util.Collections;
 
 
 public abstract class Conducteurs {
@@ -12,8 +14,8 @@ public abstract class Conducteurs {
 
     private String typePermis;
 
-    //TODO mettre la list en ObservalbleList
-    private List<Conducteurs> conducteurs;
+
+    private ObservableList<Conducteurs> conducteurs;
 
     private String numeroPermis;
 
@@ -22,7 +24,7 @@ public abstract class Conducteurs {
         this.prenom = prenom;
         this.numeroPermis = numeroPermis;
         this.typePermis = typePermis;
-        this.conducteurs = new ArrayList<>();
+
     }
 
 
@@ -98,21 +100,25 @@ public abstract class Conducteurs {
     }
 
     public String triTypeL(Conducteurs c){
-        //TODO tri le type de conducteur et affiche les livreurs
+        //TODO tri le type de conducteur et affiche les livreurs(utilise sort)
         return null;
     }
 
-    public void triAlpha(Conducteurs c) {
-        //TODO tri dans l'ordre alphabétique les conducteurs
+    public String triAlpha(Conducteurs c) {
+        //TODO tri dans l'ordre alphabétique les conducteurs (utilise sort)
+        //Collections.sort(conducteurs.sorted(conducteurs.filtered())); tkt c'est pas bon
+        return null;
     }
 
-    public boolean equals(Conducteurs Personne1){
-        //TODO est égale une personne avec le meme prenom et nom qu'une autre personne
-        return true;
+    public boolean equals(Conducteurs personne1){
+        if(prenom == null || nom == null)return false;
+        if (personne1.getPrenom() == this.prenom && personne1.getNom() == this.nom)
+            return true;
+        return false;
     }
 
 
-    @Override
+        @Override
         public String toString() {
             return "Conducteurs{" +
                     "nom='" + nom + '\'' +

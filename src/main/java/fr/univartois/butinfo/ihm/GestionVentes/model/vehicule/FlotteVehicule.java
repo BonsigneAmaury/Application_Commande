@@ -111,6 +111,13 @@ public abstract class FlotteVehicule {
         //TODO tri les vehicules par annee de circulation
     }
 
+
+    public boolean equals(FlotteVehicule vehicule1) {
+        if(immatriculation == null) return false;
+        if(vehicule1.getImmatriculation() == this.immatriculation)return true;
+        return false;
+    }
+
     @Override
     public String toString() {
         return "FlotteVehicule{" +
