@@ -16,8 +16,14 @@
 
 package fr.univartois.butinfo.ihm.GestionVentes.controller;
 
+import java.io.IOException;
+
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 
 /**
  * La classe HelloController illustre le fonctionnement du contrôleur associé à une vue.
@@ -35,17 +41,45 @@ public class GestionVentesController {
      */
     @FXML
     private Label welcomeText;
+    
+	private initialise initialise = new initialise("Carnet");
+	
+    private Scene mainScene;
+    
+    
+    private Stage stage;
+    
+    public void setStage(Stage stage) {
+    	this.stage = stage;
+    }
+    public void setScene(Scene scene) {
+    	this.mainScene = scene;
+    }
+    
 
     /**
      * Cette méthode exécute une action lorsque l'utilisateur clique sur le bouton de la
      * fenêtre.
      * Le lien avec le bouton de l'application sera réalisé automatiquement par JavaFX
      * grâce à l'annotation {@link FXML}.
+     * @throws IOException 
      */
     @FXML
-    protected void onHelloButtonClick() {
+    protected void onHelloButtonClick() throws IOException {
         // En fait, on va simplement afficher un message dans le label de l'application.
-        welcomeText.setText("Welcome to JavaFX Application!");
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../../view/CarnetClient-view.fxml"));
+        Parent viewContent = fxmlLoader.load();
+        Scene scene = new Scene(viewContent);
+        stage.setScene(scene);
+        
+        CarnetClientController controller = fxmlLoader.getController();
+        controller.setStage(stage);
+        controller.setMainScene(mainScene);
+        controller.setCarnet(initialise.getCarnet());
+        
+        
+    
+        
     }
 
 }

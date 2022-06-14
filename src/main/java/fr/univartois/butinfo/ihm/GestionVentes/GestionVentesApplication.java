@@ -16,13 +16,15 @@
 
 package fr.univartois.butinfo.ihm.GestionVentes;
 
+import java.io.IOException;
+
+import fr.univartois.butinfo.ihm.GestionVentes.controller.GestionVentesController;
+import fr.univartois.butinfo.ihm.GestionVentes.controller.initialise;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-import java.io.IOException;
 
 /**
  * La classe HelloApplication illustre le fonctionnement d'une {@link Application} JavaFX.
@@ -48,7 +50,11 @@ public class GestionVentesApplication extends Application {
 		Scene scene = new Scene(viewContent, 320, 240);
         // que l'on place elle-même dans la fenêtre.
         stage.setScene(scene);
-
+        
+        GestionVentesController controller = fxmlLoader.getController();
+        controller.setStage(stage);
+        controller.setScene(scene);
+        
         // On peut ensuite donner un titre à la fenêtre.
         stage.setTitle("Hello!");
 

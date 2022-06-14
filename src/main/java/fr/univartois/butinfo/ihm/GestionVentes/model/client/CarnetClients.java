@@ -40,6 +40,9 @@ public class CarnetClients {
 		this.nom=nom;
 		nbClients=0;
 	}
+	public ObservableList<Client> getClient(){
+		return this.clients;
+	}
 	
 	/**
 	 * Méthode testant si le carnet est plein.
