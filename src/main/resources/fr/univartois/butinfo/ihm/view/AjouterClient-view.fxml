@@ -28,7 +28,6 @@
             <Font name="Cantarell Regular" size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="id_answer" layoutX="135.0" layoutY="146.0" prefHeight="24.0" prefWidth="96.0" />
       <TextField fx:id="adresse_answer" layoutX="135.0" layoutY="275.0" prefHeight="24.0" prefWidth="96.0" />
       <TextField fx:id="prenom_answer" layoutX="135.0" layoutY="211.0" prefHeight="24.0" prefWidth="96.0" />
       <TextField fx:id="contact_answer" layoutX="135.0" layoutY="311.0" prefHeight="24.0" prefWidth="96.0" />
@@ -37,7 +36,6 @@
       <Label layoutX="22.0" layoutY="244.0" prefHeight="24.0" prefWidth="96.0" text="Genre :" />
       <Label layoutX="22.0" layoutY="211.0" prefHeight="24.0" prefWidth="96.0" text="Prénom : " />
       <Label layoutX="22.0" layoutY="178.0" prefHeight="24.0" prefWidth="96.0" text="Nom :" />
-      <Label layoutX="22.0" layoutY="146.0" prefHeight="24.0" prefWidth="96.0" text="Identifiant :" />
       <Label layoutX="22.0" layoutY="275.0" prefHeight="24.0" prefWidth="96.0" text="Adresse : " />
       <Label layoutX="22.0" layoutY="311.0" prefHeight="24.0" prefWidth="96.0" text="Contact : " />
       <Label layoutX="22.0" layoutY="349.0" prefHeight="24.0" prefWidth="96.0" text="Point fidélité : " />

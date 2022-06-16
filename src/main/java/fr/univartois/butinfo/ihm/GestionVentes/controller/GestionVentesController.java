@@ -42,7 +42,7 @@ public class GestionVentesController {
     @FXML
     private Label welcomeText;
     
-	private initialise initialise = new initialise("Carnet");
+	private initialise initialise = new initialise("Carnet", "stock");
 	
     private Scene mainScene;
     
@@ -80,6 +80,20 @@ public class GestionVentesController {
         
     
         
+    }
+    @FXML
+    protected void article() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../../view/Article-view.fxml"));
+        Parent viewContent = fxmlLoader.load();
+        Scene scene = new Scene(viewContent);
+        stage.setScene(scene);
+        
+        ArticleController controller = fxmlLoader.getController();
+        controller.setStage(stage);
+        controller.setMainScene(mainScene);
+        controller.setStock(initialise.getStock());
+        
+    	
     }
 
 }

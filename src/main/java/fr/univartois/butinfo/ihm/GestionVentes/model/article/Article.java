@@ -1,5 +1,7 @@
 package fr.univartois.butinfo.ihm.GestionVentes.model.article;
 
+import java.util.Objects;
+
 import fr.univartois.butinfo.ihm.GestionVentes.model.util.Util;
 
 /**
@@ -45,6 +47,10 @@ public class Article {
 	 */
 	private int quantiteStock;
 
+
+	public void setDesignation(String designation) {
+		this.designation = designation;
+	}
 
 	/**
 	 * Constructeur permettant de créer un nouvel article.
@@ -197,13 +203,21 @@ public class Article {
 		return "Référence :\t\t"+ reference + "\nDésignation :\t\t" + designation + "\nCatégorie :\t\t" + categorie + "\nPrix Unitaire :\t\t"+ prix+ "\nQuantité en Stock :\t"+ quantiteStock;
 	}
 
-	/**
-	 * Méthode permettant de tester si deux articles sont les mêmes :
-	 * deux articles sont les mêmes si et seulement si ils ont le même numéro de référence.
-	 * @param article Un objet supposé être instance de la classe Article et non null.
-	 */
-	public boolean equals(Object article) {
-		return ((Article)article).reference==reference;
+	@Override
+	public int hashCode() {
+		return Objects.hash(reference);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Article other = (Article) obj;
+		return reference == other.reference;
 	}
 
 	/**

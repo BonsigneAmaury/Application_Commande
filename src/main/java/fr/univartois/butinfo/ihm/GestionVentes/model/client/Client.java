@@ -1,5 +1,7 @@
 package fr.univartois.butinfo.ihm.GestionVentes.model.client;
 
+import java.util.Objects;
+
 import fr.univartois.butinfo.ihm.GestionVentes.model.util.Util;
 
 /**
@@ -148,14 +150,21 @@ abstract public class Client {
 		return "Référence :\t\t"	+ reference + "\nNom :\t\t\t" + nom + "\nAdresse :\t\t" + adresse + "\nPoints Fidélité :\t"+ pointsFidelite+ "\nRistourne (%) :\t\t"+ getRistourne();
 	}
 	
-	/**
-	 * Méthode permettant de tester si deux clients sont les mêmes :
-	 * deux clients sont les mêmes si et seulement ils ont la même référence.
-	 * @param client Un objet supposé être instance de la classe Article et non null.
-	 */
 	@Override
-	public boolean equals(Object client) {
-		return ((Client)client).reference==reference;
+	public int hashCode() {
+		return Objects.hash(reference);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Client other = (Client) obj;
+		return reference == other.reference;
 	}
 
 	/**

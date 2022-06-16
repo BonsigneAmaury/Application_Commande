@@ -35,13 +35,13 @@
             <Label fx:id="pointFid" alignment="CENTER" prefHeight="72.0" prefWidth="215.0" text="Point Fidelite" GridPane.rowIndex="5" />
             <Label fx:id="Genre" alignment="CENTER" prefHeight="72.0" prefWidth="215.0" text="Genre" GridPane.rowIndex="6" />
             <Label fx:id="contact" alignment="CENTER" prefHeight="72.0" prefWidth="215.0" text="Contact" GridPane.rowIndex="4" />
-            <Label fx:id="id_answer" prefHeight="70.0" prefWidth="312.0" GridPane.columnIndex="1" />
-            <Label fx:id="nom_answer" prefHeight="70.0" prefWidth="312.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Label fx:id="prenom_answer" prefHeight="70.0" prefWidth="312.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Label fx:id="adresse_answer" prefHeight="70.0" prefWidth="312.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Label fx:id="contact_answer" prefHeight="70.0" prefWidth="312.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <Label fx:id="PointFid_answer" prefHeight="70.0" prefWidth="312.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <Label fx:id="genre_answer" prefHeight="70.0" prefWidth="312.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label fx:id="id_answer" alignment="CENTER" prefHeight="70.0" prefWidth="312.0" GridPane.columnIndex="1" />
+            <Label fx:id="nom_answer" alignment="CENTER" prefHeight="70.0" prefWidth="312.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label fx:id="prenom_answer" alignment="CENTER" prefHeight="70.0" prefWidth="312.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label fx:id="adresse_answer" alignment="CENTER" prefHeight="70.0" prefWidth="312.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label fx:id="contact_answer" alignment="CENTER" prefHeight="70.0" prefWidth="312.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label fx:id="PointFid_answer" alignment="CENTER" prefHeight="70.0" prefWidth="312.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label fx:id="genre_answer" alignment="CENTER" prefHeight="70.0" prefWidth="312.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
          </children>
       </GridPane>
       <Line endX="741.0" layoutX="97.0" layoutY="64.0" startX="-100.0" />

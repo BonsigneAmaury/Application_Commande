@@ -105,6 +105,10 @@ public class Stock {
 
 	}
 
+	public ObservableList<Article> getArticles() {
+		return articles;
+	}
+
 	/**
 	 * Méthode retournant un nouveau tableau contenant les articles du stock.
 	 * Le tableau retourné a pour taille getNbArticles().

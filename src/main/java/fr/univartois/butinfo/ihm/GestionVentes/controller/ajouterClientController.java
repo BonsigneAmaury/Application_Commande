@@ -18,6 +18,8 @@ public class ajouterClientController {
 
 	private Scene mainScene;
 
+	private Client client;
+
 	public void setStage(Stage stage) {
 		this.stage = stage;
 	}
@@ -30,6 +32,10 @@ public class ajouterClientController {
 
 	public void setCarnet(CarnetClients carnet) {
 		this.carnetClient = carnet;
+	}
+
+	public void setClient(Client client) {
+		this.client = client;
 	}
 
 	@FXML
@@ -64,22 +70,30 @@ public class ajouterClientController {
 
 	@FXML
 	void ajouter(ActionEvent event) {
-		Client client = null;
+
 		String adresse = adresse_answer.getText();
 		String contact = contact_answer.getText();
 		Genre genre = genre_answer.getValue();
 		String nom = nom_answer.getText();
 		String prenom = prenom_answer.getText();
 		int pointFid = Integer.parseInt(pointFid_answer.getText());
-		if (type_answer.getValue() == "Particulier") {
-			client = new ClientParticulier(nom, adresse, pointFid, prenom, genre);
+		if (client != null) {
+			client.setNom(nom);
+			client.setAdresse(adresse);
+			client.setPointsFidelite(pointFid);
+			if (type_answer.getValue().equals("Particulier")) {
+				((ClientParticulier) client).setPrenom(prenom);
+				((ClientParticulier) client).setGenre(genre);
+			}
+			else
+				((ClientEntreprise) client).setContact(contact);
+		} else {
+			if (type_answer.getValue().equals("Particulier"))
+				client = new ClientParticulier(nom, adresse, pointFid, prenom, genre);
+			else
+				client = new ClientEntreprise(nom, adresse, pointFid, contact);
+			carnetClient.ajouterClient(client);
 		}
-
-		if (type_answer.getValue() == "Entreprise") {
-
-			client = new ClientEntreprise(nom, adresse, pointFid, contact);
-		}
-		carnetClient.ajouterClient(client);
 		stage.setScene(mainScene);
 	}
 
