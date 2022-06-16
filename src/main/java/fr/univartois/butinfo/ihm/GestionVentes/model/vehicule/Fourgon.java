@@ -5,39 +5,38 @@ package fr.univartois.butinfo.ihm.GestionVentes.model.vehicule;
 import fr.univartois.butinfo.ihm.GestionVentes.model.conducteur.Livreur;
 
 
-public class Fourgon extends FlotteVehicule {
+public class Fourgon extends Vehicule {
 
     private double PoidMaximal;
 
     public Livreur livreur;
 
-    private double vMChargement;
+    private double volumeMax;
 
     public Fourgon(String immatriculation, String modele, String marque, double kilometrage, int anneeCircu, double poidMaximal, double vMChargement) {
         super(immatriculation,modele,marque,kilometrage,anneeCircu);
-        this.vMChargement = vMChargement;
+        this.volumeMax = vMChargement;
         this.PoidMaximal = poidMaximal;
     }
-    private double getVMChargement() {
-        // Automatically generated method. Please do not modify this code.
-        return this.vMChargement;
+    private double getVolumeMax() {
+        return this.volumeMax;
     }
 
-
-    private void setVMChargement(double value) {
-        // Automatically generated method. Please do not modify this code.
-        this.vMChargement = value;
+    private void setVolumeMax(double value) {
+        this.volumeMax = value;
     }
-
-
 
     private double getPoidMaximal() {
-        // Automatically generated method. Please do not modify this code.
         return this.PoidMaximal;
     }
 
     private void setPoidMaximal(double value) {
-        // Automatically generated method. Please do not modify this code.
         this.PoidMaximal = value;
     }
+	@Override
+	public String toString() {
+		return super.toString() + "PoidMaximal=" + PoidMaximal + ", livreur=" + livreur + ", volumeMax=" + volumeMax;
+	}
+    
+    
 }
