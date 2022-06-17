@@ -214,10 +214,10 @@ class StockTest {
 	}
 	
 	@Test
-	void testRechercheParCatégorie() {
+	void testRechercheParCategorie() {
 		//GIVEN
 		String nom="stock";
-		String designation="Gros vélo";
+		String designation="Gros vÃ©lo";
 		double prix=5.3;
 		int quantiteStock=6;
 		double poids=200;
@@ -233,8 +233,8 @@ class StockTest {
 		stock.ajouterArticle(articleC22);
 		stock.ajouterArticle(articleC23);
 		//THEN
-		assertThat(stock.rechercherArticlesCategorie("Vélos")).isNotEmpty();
-		assertThat(stock.rechercherArticlesCategorie("Vélos")).isNotNull();
-		assertThat((stock.rechercherArticlesCategorie("Vélos")).length).isEqualTo(3);
+		assertThat(stock.rechercherArticlesCategorie("VÃ©los")).isNotEmpty();
+		assertThat(stock.rechercherArticlesCategorie("VÃ©los")).isNotNull();
+		assertThat((stock.rechercherArticlesCategorie("VÃ©los")).length).isEqualTo(3);
 	}
 }

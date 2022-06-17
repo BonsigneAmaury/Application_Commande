@@ -29,6 +29,10 @@ public class FlotteVehicule {
 	}
 	
 	
+	public ObservableList<Vehicule> getFlotte() {
+		return flotte;
+	}
+
 	public void afficher() {
 		Iterator<Vehicule> iteratorFourgon=flotte.iterator();
 		while (iteratorFourgon.hasNext()) {

@@ -120,7 +120,7 @@ public class CarnetClientController {
 	void Modifier(ActionEvent event) throws IOException {
 		Client modified = ListView.getSelectionModel().getSelectedItem();
 		if (modified != null) {
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../../view/ajouterClient-view.fxml"));
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../../view/AjouterClient-view.fxml"));
 			Parent viewContent = fxmlLoader.load();
 			Scene scene = new Scene(viewContent);
 			Scene currentScene = stage.getScene();
@@ -139,7 +139,7 @@ public class CarnetClientController {
 
 	@FXML
 	void NouveauClient(ActionEvent event) throws IOException {
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../../view/ajouterClient-view.fxml"));
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../../view/AjouterClient-view.fxml"));
 		Parent viewContent = fxmlLoader.load();
 		Scene scene = new Scene(viewContent);
 		Scene currentScene = stage.getScene();

@@ -136,7 +136,7 @@ class CommandeTest {
 	}
 	
 	@Test
-	void testCommanderErreurQuantité() {
+	void testCommanderErreurQuantite() {
 		//GIVEN
 		//WHEN
 		Commande commande =new Commande(client1);

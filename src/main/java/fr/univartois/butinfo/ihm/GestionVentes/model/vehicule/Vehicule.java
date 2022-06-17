@@ -21,61 +21,69 @@ public abstract class Vehicule {
         this.anneeCircu = anneeCircu;
     }
 
-    private String getMarque() {
-        // Automatically generated method. Please do not modify this code.
-        return this.marque;
-    }
-
-    private void setMarque(String value) {
-        // Automatically generated method. Please do not modify this code.
-        this.marque = value;
-    }
-
-    private String getImmatriculation() {
-        // Automatically generated method. Please do not modify this code.
-        return this.immatriculation;
-    }
 
 
-    private void setImmatriculation(String value) {
-        // Automatically generated method. Please do not modify this code.
-        this.immatriculation = value;
-    }
-
-    private double getKilometrage() {
-        // Automatically generated method. Please do not modify this code.
-        return this.kilometrage;
-    }
+    public String getImmatriculation() {
+		return immatriculation;
+	}
 
 
-    private void setKilometrage(double value) {
-        // Automatically generated method. Please do not modify this code.
-        this.kilometrage = value;
-    }
 
-    private int getAnneeCircu() {
-        // Automatically generated method. Please do not modify this code.
-        return this.anneeCircu;
-    }
+	public void setImmatriculation(String immatriculation) {
+		this.immatriculation = immatriculation;
+	}
 
 
-    private void setAnneeCircu(int value) {
-        // Automatically generated method. Please do not modify this code.
-        this.anneeCircu = value;
-    }
-    private String getModele() {
-        // Automatically generated method. Please do not modify this code.
-        return this.modele;
-    }
+
+	public double getKilometrage() {
+		return kilometrage;
+	}
 
 
-    private void setModele(String value) {
-        // Automatically generated method. Please do not modify this code.
-        this.modele = value;
-    }
+
+	public void setKilometrage(double kilometrage) {
+		this.kilometrage = kilometrage;
+	}
 
 
-    public boolean equals(Vehicule vehicule1) {
+
+	public String getModele() {
+		return modele;
+	}
+
+
+
+	public void setModele(String modele) {
+		this.modele = modele;
+	}
+
+
+
+	public int getAnneeCircu() {
+		return anneeCircu;
+	}
+
+
+
+	public void setAnneeCircu(int anneeCircu) {
+		this.anneeCircu = anneeCircu;
+	}
+
+
+
+	public String getMarque() {
+		return marque;
+	}
+
+
+
+	public void setMarque(String marque) {
+		this.marque = marque;
+	}
+
+
+
+	public boolean equals(Vehicule vehicule1) {
         if(immatriculation == null) return false;
         if(this.immatriculation.equals(vehicule1.getImmatriculation()))return true;
         return false;

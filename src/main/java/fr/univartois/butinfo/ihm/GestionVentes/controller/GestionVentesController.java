@@ -56,7 +56,6 @@ public class GestionVentesController {
     	this.mainScene = scene;
     }
     
-
     /**
      * Cette méthode exécute une action lorsque l'utilisateur clique sur le bouton de la
      * fenêtre.
@@ -65,7 +64,7 @@ public class GestionVentesController {
      * @throws IOException 
      */
     @FXML
-    protected void onHelloButtonClick() throws IOException {
+    protected void acces_carnet_des_clients() throws IOException {
         // En fait, on va simplement afficher un message dans le label de l'application.
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../../view/CarnetClient-view.fxml"));
         Parent viewContent = fxmlLoader.load();
@@ -82,7 +81,7 @@ public class GestionVentesController {
         
     }
     @FXML
-    protected void article() throws IOException {
+    protected void acces_stock_des_articles() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../../view/Article-view.fxml"));
         Parent viewContent = fxmlLoader.load();
         Scene scene = new Scene(viewContent);
@@ -94,6 +93,41 @@ public class GestionVentesController {
         controller.setStock(initialise.getStock());
         
     	
+    }
+
+    @FXML
+    protected void acces_liste_des_conducteurs() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../../view/Conducteurs-view.fxml"));
+        Parent viewContent = fxmlLoader.load();
+        Scene scene = new Scene(viewContent);
+        stage.setScene(scene);
+        
+        ConducteursController controller = fxmlLoader.getController();
+        controller.setStage(stage);
+        controller.setMainScene(mainScene);
+        controller.setConducteurs(initialise.getConducteurs());
+
+    }
+
+    @FXML
+    protected void acces_liste_des_vehicules() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../../view/Vehicules-view.fxml"));
+        Parent viewContent = fxmlLoader.load();
+        Scene scene = new Scene(viewContent);
+        stage.setScene(scene);
+        
+        VehiculeController controller = fxmlLoader.getController();
+        controller.setStage(stage);
+        controller.setMainScene(mainScene);
+        controller.setFlotte(initialise.getFlotte());
+    }
+
+
+
+    @FXML
+    protected void close_menu() {
+    	stage.close();
+
     }
 
 }

@@ -19,41 +19,82 @@ public abstract class Conducteur {
     }
 
 
-    private String getPrenom() {
-        return this.prenom;
-    }
-
-    private void setPrenom(String value) {
-        this.prenom = value;
-    }
-    
-    private void setNumeroPermis(String value) {
-        this.nom = value;
-    }
-
-    private String getNumeroPermis() {
-        return this.numeroPermis;
-    }
-    
-    private void setNom(String value) {
-        this.nom = value;
-    }
-
-    private String getNom() {
-        return this.nom;
-    }
-    private Permis getTypePermis() {
-        return this.typePermis;
-    }
-    private void setTypePermis(Permis value) {
-        this.typePermis = value;
-    }
-    private int getReference() {
-        return reference;
-    }
+   
 
 
-    public boolean equals(Conducteur personne1){
+    public String getNom() {
+		return nom;
+	}
+
+
+
+
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+
+
+
+
+	public String getPrenom() {
+		return prenom;
+	}
+
+
+
+
+
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+
+
+
+
+
+	public Permis getTypePermis() {
+		return typePermis;
+	}
+
+
+
+
+
+	public void setTypePermis(Permis typePermis) {
+		this.typePermis = typePermis;
+	}
+
+
+
+
+
+	public String getNumeroPermis() {
+		return numeroPermis;
+	}
+
+
+
+
+
+	public void setNumeroPermis(String numeroPermis) {
+		this.numeroPermis = numeroPermis;
+	}
+
+
+
+
+
+	public int getReference() {
+		return reference;
+	}
+
+
+
+
+
+	public boolean equals(Conducteur personne1){
         if(prenom == null || nom == null)return false;
         if (this.prenom.equals(personne1.getPrenom()) && this.nom.equals(personne1.getNom()))
             return true;

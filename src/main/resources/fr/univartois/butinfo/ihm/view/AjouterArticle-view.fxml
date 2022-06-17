@@ -23,7 +23,7 @@
             <Font name="Cantarell Regular" size="15.0" />
          </font>
       </Button>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="2.0" prefHeight="73.0" prefWidth="253.0" text="Ajoute d'un client">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="2.0" prefHeight="73.0" prefWidth="253.0" text="Ajoute d'un article">
          <font>
             <Font name="Cantarell Regular" size="20.0" />
          </font>
