@@ -25,7 +25,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.buildship.core.gradleclasspathcontainer"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="lib" path="lib/assertj-core-3.22.0 (1).jar"/>
 	<classpathentry kind="lib" path="lib/byte-buddy-1.12.10.jar"/>
 	<classpathentry kind="lib" path="lib/byte-buddy-agent-1.12.10.jar"/>
@@ -34,5 +33,6 @@
 	<classpathentry kind="lib" path="lib/mockito-core-4.6.0.jar"/>
 	<classpathentry kind="lib" path="lib/mockito-junit-jupiter-4.6.0.jar"/>
 	<classpathentry kind="lib" path="lib/objenesis-3.2.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="output" path="bin/default"/>
 </classpath>

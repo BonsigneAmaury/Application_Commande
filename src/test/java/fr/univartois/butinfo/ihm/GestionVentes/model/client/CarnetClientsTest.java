@@ -1,11 +1,12 @@
 package fr.univartois.butinfo.ihm.GestionVentes.model.client;
 
 import static org.assertj.core.api.Assertions.assertThat;
+
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-
 
 
 
@@ -47,6 +48,7 @@ class CarnetClientsTest {
 	ClientParticulier clientP3;
 	
 	@Test
+	@DisplayName("Test du constructeur")
 	void testConstructeur() {
 		//GIVEN
 		String nom="Carnet";
@@ -58,6 +60,7 @@ class CarnetClientsTest {
 	}
 	
 	@Test
+	@DisplayName("Test de la methode setNom")
 	void testSetNom() {
 		//GIVEN
 		String nom="Carnet";
@@ -69,6 +72,7 @@ class CarnetClientsTest {
 	}
 	
 	@Test
+	@DisplayName("Test de la methode estPlein quand elle renvoie false")
 	void testEstPleinFaux() {
 		//GIVEN
 		String nom="Carnet";
@@ -79,6 +83,7 @@ class CarnetClientsTest {
 	}
 	
 	@Test
+	@DisplayName("Test de la methode estPlein quand elle renvoie true")
 	void testEstPleinVrai() {
 		//GIVEN
 		String nom="Carnet";
@@ -99,6 +104,7 @@ class CarnetClientsTest {
 	}
 	
 	@Test
+	@DisplayName("Test de la methode estVide quand elle renvoie false")
 	void testEstVideFaux() {
 		//GIVEN
 		String nom="Carnet";
@@ -119,6 +125,7 @@ class CarnetClientsTest {
 	}
 	
 	@Test
+	@DisplayName("Test de la methode estVide quand elle renvoie true")
 	void testEstVideVrai() {
 		//GIVEN
 		String nom="Carnet";
@@ -129,6 +136,7 @@ class CarnetClientsTest {
 	}
 	
 	@Test
+	@DisplayName("Test de la methode ajouterClient")
 	void testAjouter() {
 		//GIVEN
 		String nom="carnet";
@@ -140,6 +148,7 @@ class CarnetClientsTest {
 	}
 	
 	@Test
+	@DisplayName("Test de la methode ajouterClient quand le carnet est plein")
 	void testAjouterErreurPlein() {
 		//GIVEN
 		String nom="carnet";
@@ -161,6 +170,7 @@ class CarnetClientsTest {
 	}
 	
 	@Test
+	@DisplayName("Test de la methode ajouterClient quand un client est deja present")
 	void testAjouterErreurDejaPresent() {
 		//GIVEN
 		String nom="carnet";
@@ -173,6 +183,7 @@ class CarnetClientsTest {
 	}
 	
 	@Test
+	@DisplayName("Test de la methode supprimerClient")
 	void testSupprimer() {
 		//GIVEN
 		String nom="carnet";
@@ -185,6 +196,7 @@ class CarnetClientsTest {
 	}
 	
 	@Test
+	@DisplayName("Test de la methode supprimerClient d'un clients qui n'est pas present")
 	void testSupprimerErreurPasPresent() {
 		//GIVEN
 		String nom="carnet";
@@ -198,6 +210,7 @@ class CarnetClientsTest {
 	}
 	
 	@Test
+	@DisplayName("Test de la methode rechercherClientParRefence quand la reference n'est attribué a aucun client")
 	void testRechercherParReferenceErreur() {
 		//GIVEN
 		String nom="carnet";
@@ -210,6 +223,7 @@ class CarnetClientsTest {
 	}
 	
 	@Test
+	@DisplayName("Test de la methode ClientDansCarnet")
 	void testClientsDansCarnet() {
 		//GIVEN
 		String nom="carnet";
@@ -224,6 +238,7 @@ class CarnetClientsTest {
 	}
 	
 	@Test
+	@DisplayName("Test de la methode ClientParticuliersDansCarnet")
 	void testClientsParticulierDansCarnet() {
 		//GIVEN
 		String nom="carnet";
@@ -242,6 +257,7 @@ class CarnetClientsTest {
 	}
 	
 	@Test
+	@DisplayName("Test de la methode ClientEntreprisesDansCarnet")
 	void testClientsEntrepriseDansCarnet() {
 		//GIVEN
 		String nom="carnet";

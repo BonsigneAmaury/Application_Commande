@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.Objects;
+import java.util.function.IntPredicate;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -77,6 +78,11 @@ public class FlotteVehicule {
 			return false;
 		FlotteVehicule other = (FlotteVehicule) obj;
 		return Objects.equals(flotte, other.flotte);
+	}
+
+	public int getSize() {
+
+		return flotte.size();
 	}
 	
 	

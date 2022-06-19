@@ -3,6 +3,7 @@ package fr.univartois.butinfo.ihm.GestionVentes.model.commande;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -23,6 +24,7 @@ class LigneCommandeTest {
 	@Mock
 	ArticleCat2 articleLivrable;
 	@Test
+	@DisplayName("Test du constructeur")
 	void testConstructeur() {
 		//GIVEN
 		int quantite=8;
@@ -35,6 +37,7 @@ class LigneCommandeTest {
 		assertThat(ligneCommande.toString()).hasToString("Réf. Art.: 0 (article) | Qté.: 8 | Prix U.: 5.0 | Montant: 40.0 | Montant avec livr.: 40.0");
 	}
 	@Test
+	@DisplayName("Test de la methodes GetMontant")
 	void testGetMontant() {
 		//GIVEN
 		int quantite=1;

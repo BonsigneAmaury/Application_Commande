@@ -18,19 +18,19 @@ public class Fourgon extends Vehicule {
         this.volumeMax = vMChargement;
         this.PoidMaximal = poidMaximal;
     }
-    private double getVolumeMax() {
+    public double getVolumeMax() {
         return this.volumeMax;
     }
 
-    private void setVolumeMax(double value) {
+    public void setVolumeMax(double value) {
         this.volumeMax = value;
     }
 
-    private double getPoidMaximal() {
+    public double getPoidMaximal() {
         return this.PoidMaximal;
     }
 
-    private void setPoidMaximal(double value) {
+    public void setPoidMaximal(double value) {
         this.PoidMaximal = value;
     }
 	@Override

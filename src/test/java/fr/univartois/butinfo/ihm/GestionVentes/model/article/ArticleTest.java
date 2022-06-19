@@ -1,11 +1,14 @@
 package fr.univartois.butinfo.ihm.GestionVentes.model.article;
 
 import static org.assertj.core.api.Assertions.assertThat;
+
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 class ArticleTest {
 
 	@Test
+	@DisplayName("Test du constructeur avec paramètre")
 	void testConstructeurParametre() {
 		//GIVEN
 		String categorie="tasse";
@@ -22,6 +25,7 @@ class ArticleTest {
 	}
 
 	@Test
+	@DisplayName("Verification que deux articles ne peuvent pas la meme reference")
 	void testConstructeurReference() {
 		//GIVEN
 		String categorie="Tasse";
@@ -41,6 +45,7 @@ class ArticleTest {
 	}
 	
 	@Test
+	@DisplayName("Test du constructeur avec parametre sans categorie")
 	void testConstructeurParametreSansCategorie() {
 		//GIVEN
 		String designation="Grosse tasse";
@@ -53,9 +58,9 @@ class ArticleTest {
 		assertThat(article.getPrix()).isEqualTo(prix);
 		assertThat(article.getQuantiteStock()).isEqualTo(quantiteStock);
 	}
-	// a tester celui sans paramtre 
 	
 	@Test
+	@DisplayName("Test de la methode setPrix")
 	void testSetPrix() {
 		//GIVEN
 		String categorie="tasse";
@@ -70,6 +75,7 @@ class ArticleTest {
 	}
 	
 	@Test
+	@DisplayName("Test de la condition que la valeur de setPrix doit etre superieure a 0")
 	void testSetPrixInfZero() {
 		//GIVEN
 		String categorie="tasse";
@@ -84,6 +90,7 @@ class ArticleTest {
 	}
 	
 	@Test
+	@DisplayName("Test de la methode setQuantiteStock")
 	void testSetQuantiteStock() {
 		//GIVEN
 		String categorie="tasse";
@@ -98,6 +105,7 @@ class ArticleTest {
 	}
 	
 	@Test
+	@DisplayName("Test de la condition que la valeur de setQuantiteStock doit etre superieure a 0")
 	void testSetQuantiteStockInfZero() {
 		//GIVEN
 		String categorie="tasse";
@@ -112,6 +120,8 @@ class ArticleTest {
 	}
 	
 	@Test
+	@DisplayName("Test de la methode estDisponible")
+
 	void testEstDisponible() {
 		//GIVEN
 		String categorie="tasse";
@@ -126,6 +136,7 @@ class ArticleTest {
 	}
 	
 	@Test
+	@DisplayName("Test de la condition de sortie de la methode EstDisponiblz")
 	void testPasDisponible() {
 		//GIVEN
 		String categorie="tasse";
@@ -140,6 +151,7 @@ class ArticleTest {
 	}
 	
 	@Test
+	@DisplayName("Test de la methode ajoutQuantite")
 	void testAjoutQuantite() {
 		//GIVEN
 		String categorie="tasse";
@@ -154,6 +166,7 @@ class ArticleTest {
 	}
 	
 	@Test
+	@DisplayName("Test de la condition que la valeur de ajoutQuantite doit etre superieure a 0")
 	void testAjoutQuantiteInfZero() {
 		//GIVEN
 		String categorie="tasse";
@@ -168,6 +181,7 @@ class ArticleTest {
 	}
 	
 	@Test
+	@DisplayName("Test de la methode enleverQuantite")
 	void testEnleverQuantite() {
 		//GIVEN
 		String categorie="tasse";
@@ -182,6 +196,7 @@ class ArticleTest {
 	}
 	
 	@Test
+	@DisplayName("Test de la condition que la valeur de enleverQuantite doit etre superieure a 0")
 	void testEnleverQuantiteInfZero() {
 		//GIVEN
 		String categorie="tasse";
@@ -196,6 +211,7 @@ class ArticleTest {
 	}
 	
 	@Test
+	@DisplayName("Test de la condition que la valeur de setPrix doit etre superieure a la quantite de l'article")
 	void testEnleverQuantiteSupQuantite() {
 		//GIVEN
 		String categorie="tasse";
@@ -209,6 +225,7 @@ class ArticleTest {
 		assertThat(article.getQuantiteStock()).isEqualTo(0);
 	}
 	@Test
+	@DisplayName("Test de la methode equals")
 	void testEquals() {
 		//GIVEN
 		String categorie="tasse";
@@ -221,6 +238,7 @@ class ArticleTest {
 		assertThat(article.equals(article)).isEqualTo(true);
 	}
 	@Test
+	@DisplayName("Test de la methode equals dans le cas ou ce n'est pas egales")
 	void testNotEquals() {
 		//GIVEN
 		String categorie="tasse";

@@ -1,6 +1,8 @@
 package fr.univartois.butinfo.ihm.GestionVentes.model.client;
 
 import static org.assertj.core.api.Assertions.assertThat;
+
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 
@@ -8,6 +10,7 @@ import org.junit.jupiter.api.Test;
 class ClientEntrepriseTest {
 
 	@Test
+	@DisplayName("Test du constructeur avec parametre")
 	void testConstructeurParametre() {
 		//GIVEN
 		String nom="Michel";
@@ -23,6 +26,7 @@ class ClientEntrepriseTest {
 		assertThat(client.getContact()).isEqualTo(contact);
 	}
 	@Test
+	@DisplayName("Test que deux clients ne peuvent pas avoir la meme reference")
 	void testConstructeurRef() {
 		//GIVEN
 		String nom="Michel";
@@ -41,6 +45,7 @@ class ClientEntrepriseTest {
 		assertThat(client.getReference()).isNotEqualTo(client2.getReference());
 	}
 	@Test
+	@DisplayName("Test de la methode getRistourne qui renvoie 15")
 	void testGetRistourne15() {
 		//GIVEN
 		String nom="Michel";
@@ -53,6 +58,7 @@ class ClientEntrepriseTest {
 		assertThat(client.getRistourne()).isEqualTo(15);
 	}
 	@Test
+	@DisplayName("Test de la methode getRistourne qui renvoie 10")
 	void testGetRistourne10() {
 		//GIVEN
 		String nom="Michel";
@@ -65,6 +71,7 @@ class ClientEntrepriseTest {
 		assertThat(client.getRistourne()).isEqualTo(10);
 	}
 	@Test
+	@DisplayName("Test de la methode getRistourne qui renvoie 5")
 	void testGetRistourne5() {
 		//GIVEN
 		String nom="Michel";
@@ -77,6 +84,7 @@ class ClientEntrepriseTest {
 		assertThat(client.getRistourne()).isEqualTo(5);
 	}
 	@Test
+	@DisplayName("Test de la methode getRistourne qui renvoie 0")
 	void testGetRistourne0() {
 		//GIVEN
 		String nom="Michel";
@@ -88,7 +96,7 @@ class ClientEntrepriseTest {
 		//THEN
 		assertThat(client.getRistourne()).isEqualTo(0);
 	}
-	@Test
+	@Test@DisplayName("Test de la methode setContact")
 	void testSetContact() {
 		//GIVEN
 		String nom="Michel";
@@ -102,6 +110,7 @@ class ClientEntrepriseTest {
 		assertThat(client.getContact()).isEqualTo("Deux");
 	}
 	@Test
+	@DisplayName("Test de la methode setNom")
 	void testSetNom() {
 		//GIVEN
 		String nom="Michel";
@@ -115,6 +124,7 @@ class ClientEntrepriseTest {
 		assertThat(client.getNom()).isEqualTo("Jean");
 	}
 	@Test
+	@DisplayName("Test de la methode setAdresses")
 	void testSetAdresse() {
 		//GIVEN
 		String nom="Michel";
@@ -128,6 +138,7 @@ class ClientEntrepriseTest {
 		assertThat(client.getAdresse()).isEqualTo("l'avenue");
 	}
 	@Test
+	@DisplayName("Test de la methode setPointsFidelite")
 	void testSetPointsFidelite() {
 		//GIVEN
 		String nom="Michel";
@@ -141,6 +152,7 @@ class ClientEntrepriseTest {
 		assertThat(client.getPointsFidelite()).isEqualTo(48);
 	}
 	@Test
+	@DisplayName("Test de la methode equals")
 	void testEquals() {
 		//GIVEN
 		String nom="Michel";

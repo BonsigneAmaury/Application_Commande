@@ -1,11 +1,14 @@
 package fr.univartois.butinfo.ihm.GestionVentes.model.article;
 
 import static org.assertj.core.api.Assertions.assertThat;
+
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 class ArticleCat2Test {
 	
 	@Test
+	@DisplayName("Test du constructeur")
 	void testConstructeurParametre() {
 		//GIVEN
 		String designation="Gros vélo";
@@ -21,6 +24,7 @@ class ArticleCat2Test {
 		assertThat(article.getPoids()).isEqualTo(poids);
 	}
 	@Test
+	@DisplayName("Test de la methode setPoids")
 	void testSetPoids() {
 		//GIVEN
 		String designation="Gros velo";
@@ -34,6 +38,7 @@ class ArticleCat2Test {
 		assertThat(article.getPoids()).isEqualTo(250);
 	}
 	@Test
+	@DisplayName("Test de la condition que la valeur de setPoids doit etre superieure a 0")
 	void testSetPoidsInfZero() {
 		//GIVEN
 		String designation="Gros vélo";
@@ -47,6 +52,7 @@ class ArticleCat2Test {
 		assertThat(article.getPoids()).isEqualTo(15.0);
 	}
 	@Test
+	@DisplayName("Test de la methode getLargeurColis")
 	void testLargeurColis() {
 		//GIVEN
 		String designation="Gros vélo";
@@ -59,6 +65,7 @@ class ArticleCat2Test {
 		assertThat(article.getLargeurColis()).isEqualTo(170);
 	}
 	@Test
+	@DisplayName("Test de la methode getProfondeurColis")
 	void testProfondeurColis() {
 		//GIVEN
 		String designation="Gros vélo";
@@ -71,6 +78,7 @@ class ArticleCat2Test {
 		assertThat(article.getProfondeurColis()).isEqualTo(40);
 	}
 	@Test
+	@DisplayName("Test de la methode getKGColis")
 	void testKGColis() {
 		//GIVEN
 		String designation="Gros vélo";
@@ -83,6 +91,7 @@ class ArticleCat2Test {
 		assertThat(article.getPoidsKgColis()).isEqualTo(201);
 	}
 	@Test
+	@DisplayName("Test de la methode getHauteurColis")
 	void testHauteurColis() {
 		//GIVEN
 		String designation="Gros vélo";

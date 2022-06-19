@@ -8,7 +8,7 @@ public class Commercial extends Conducteur {
         super(nom,prenom,numeroPermis,typePermis);
         this.nbVisite=0;
     }
-    public void nbVisite(Commercial c) {
+    public void nbVisite() {
         nbVisite+=1;
     }
 	public int getNbVisite() {

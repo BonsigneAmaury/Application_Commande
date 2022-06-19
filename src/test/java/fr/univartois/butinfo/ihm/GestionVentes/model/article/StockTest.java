@@ -1,6 +1,8 @@
 package fr.univartois.butinfo.ihm.GestionVentes.model.article;
 
 import static org.assertj.core.api.Assertions.assertThat;
+
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -34,6 +36,7 @@ class StockTest {
 	
 	
 	@Test
+	@DisplayName("Test du constructeur")
 	void testConstructeur() {
 		//GIVEN
 		String nom="stock";
@@ -45,6 +48,7 @@ class StockTest {
 	}
 	
 	@Test
+	@DisplayName("Test de la methode estPlein quand elle renvoie false")
 	void testEstPleinFaux() {
 		//GIVEN
 		String nom="stock";
@@ -55,6 +59,7 @@ class StockTest {
 	}
 	
 	@Test
+	@DisplayName("Test de la methode setNom")
 	void testSetNom() {
 		//GIVEN
 		String nom="stock";
@@ -66,6 +71,7 @@ class StockTest {
 	}
 	
 	@Test
+	@DisplayName("Test de la methode estPlein quand elle renvoie true")
 	void testEstPleinVrai() {
 		//GIVEN
 		String nom="stock";
@@ -86,6 +92,7 @@ class StockTest {
 	}
 	
 	@Test
+	@DisplayName("Test de la methode estVide quand elle renvoie true")
 	void testEstVideVrai() {
 		//GIVEN
 		String nom="stock";
@@ -96,6 +103,7 @@ class StockTest {
 	}
 	
 	@Test
+	@DisplayName("Test de la methode estVide quand elle renvoie false")
 	void testEstVideFaux() {
 		//GIVEN
 		String nom="stock";
@@ -107,6 +115,7 @@ class StockTest {
 	}
 	
 	@Test
+	@DisplayName("Test de la methode ajouterArticle ")
 	void testAjouter() {
 		//GIVEN
 		String nom="stock";
@@ -118,6 +127,7 @@ class StockTest {
 	}
 	
 	@Test
+	@DisplayName("Test de la methode ajouterArticle quand le stock est plein")
 	void testAjouterErreurPlein() {
 		//GIVEN
 		String nom="stock";
@@ -139,6 +149,7 @@ class StockTest {
 	}
 	
 	@Test
+	@DisplayName("Test de la methode ajouterArticle mais que l'article est deja present")
 	void testAjouterErreurDejaPresent() {
 		//GIVEN
 		String nom="stock";
@@ -151,6 +162,7 @@ class StockTest {
 	}
 	
 	@Test
+	@DisplayName("Test de la methode supprimerArticle")
 	void testSupprimer() {
 		//GIVEN
 		String nom="stock";
@@ -163,6 +175,7 @@ class StockTest {
 	}
 	
 	@Test
+	@DisplayName("Test de la methode supprimerArticle alros que l'article n'est pas present")
 	void testSupprimerErreurPasPresent() {
 		//GIVEN
 		String nom="stock";
@@ -176,6 +189,7 @@ class StockTest {
 	}
 	
 	@Test
+	@DisplayName("Test de la methode RechercherArticle par reference qui ne correspond a aucun article")
 	void testRechercherParReferenceErreur() {
 		//GIVEN
 		String nom="stock";
@@ -188,6 +202,7 @@ class StockTest {
 	}
 	
 	@Test
+	@DisplayName("Test de la methode rechercherArticleparReference")
 	void testRechercherParReference() {
 		//GIVEN
 		String nom="stock";
@@ -200,6 +215,7 @@ class StockTest {
 	}
 	
 	@Test
+	@DisplayName("Test de la methode articlesDansStock")
 	void testArticleDansStock() {
 		//GIVEN
 		String nom="stock";
@@ -214,10 +230,11 @@ class StockTest {
 	}
 	
 	@Test
-	void testRechercheParCategorie() {
+	@DisplayName("Test de la methode rechercherARticlesCaterogies")
+	void testRechercheParCatégorie() {
 		//GIVEN
 		String nom="stock";
-		String designation="Gros vÃ©lo";
+		String designation="Gros vélo";
 		double prix=5.3;
 		int quantiteStock=6;
 		double poids=200;
@@ -233,8 +250,8 @@ class StockTest {
 		stock.ajouterArticle(articleC22);
 		stock.ajouterArticle(articleC23);
 		//THEN
-		assertThat(stock.rechercherArticlesCategorie("VÃ©los")).isNotEmpty();
-		assertThat(stock.rechercherArticlesCategorie("VÃ©los")).isNotNull();
-		assertThat((stock.rechercherArticlesCategorie("VÃ©los")).length).isEqualTo(3);
+		assertThat(stock.rechercherArticlesCategorie("Vélos")).isNotEmpty();
+		assertThat(stock.rechercherArticlesCategorie("Vélos")).isNotNull();
+		assertThat((stock.rechercherArticlesCategorie("Vélos")).length).isEqualTo(3);
 	}
 }
