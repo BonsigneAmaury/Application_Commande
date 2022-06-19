@@ -26,42 +26,45 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 /**
- * La classe HelloController illustre le fonctionnement du contrôleur associé à une vue.
+ * controller affichant le menu principal
  *
- * @author Romain Wallon
+ * @author axel poteau
  *
  * @version 0.1.0
  */
 public class GestionVentesController {
-
-    /**
-     * Le label de l'application, où l'on va pouvoir afficher des messages.
-     * Ce label sera initialisé automatiquement par JavaFX grâce à l'annotation
-     * {@link FXML}.
-     */
-    @FXML
-    private Label welcomeText;
-    
+ 
+	/**
+	 * appel de la fonction initialise
+	 */
 	private initialise initialise = new initialise("Carnet", "stock");
-	
+	/**
+	 * la scene de la fenetre
+	 */
     private Scene mainScene;
     
-    
+    /**
+     * la fenetre de l'appli
+     */
     private Stage stage;
-    
+    /**
+     * mise en place de la fenetre
+     * @param stage
+     */
     public void setStage(Stage stage) {
     	this.stage = stage;
     }
+    /**
+     * mise en place de la scene de la fenetre 
+     * @param scene
+     */
     public void setScene(Scene scene) {
     	this.mainScene = scene;
     }
     
     /**
-     * Cette méthode exécute une action lorsque l'utilisateur clique sur le bouton de la
-     * fenêtre.
-     * Le lien avec le bouton de l'application sera réalisé automatiquement par JavaFX
-     * grâce à l'annotation {@link FXML}.
-     * @throws IOException 
+     * acces au carnet des clients
+     * @throws IOException
      */
     @FXML
     protected void acces_carnet_des_clients() throws IOException {
@@ -80,6 +83,10 @@ public class GestionVentesController {
     
         
     }
+    /**
+     * acces au stock des article
+     * @throws IOException
+     */
     @FXML
     protected void acces_stock_des_articles() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../../view/Article-view.fxml"));
@@ -94,7 +101,10 @@ public class GestionVentesController {
         
     	
     }
-
+    /**
+     * acces a la liste des conducteurs
+     * @throws IOException
+     */
     @FXML
     protected void acces_liste_des_conducteurs() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../../view/Conducteurs-view.fxml"));
@@ -108,7 +118,10 @@ public class GestionVentesController {
         controller.setConducteurs(initialise.getConducteurs());
 
     }
-
+    /**
+     * acces a la liste des vehicule
+     * @throws IOException
+     */
     @FXML
     protected void acces_liste_des_vehicules() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../../view/Vehicules-view.fxml"));
@@ -123,7 +136,9 @@ public class GestionVentesController {
     }
 
 
-
+    /**
+     * fermeture du menu
+     */
     @FXML
     protected void close_menu() {
     	stage.close();

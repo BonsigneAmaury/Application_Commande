@@ -1,5 +1,7 @@
 package fr.univartois.butinfo.ihm.GestionVentes.controller;
-
+/**
+ * controller du carnet de client
+ */
 import java.io.IOException;
 
 import fr.univartois.butinfo.ihm.GestionVentes.model.client.CarnetClients;
@@ -17,15 +19,22 @@ import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
 public class CarnetClientController {
-
+	/**
+	 * la fenetre de l'apli 
+	 */
 	private Stage stage;
-
+	/**
+	 * scene de la fenetre 
+	 */
 	private Scene mainScene;
-
-	private Scene sceneCarnet;
-
+	/**
+	 * carnet contenant les client
+	 */
 	private CarnetClients carnetClient;
-
+	/**
+	 *mise en place du carnet de client ainsi que de l'affichage de ce ci
+	 * @param carnet
+	 */
 	public void setCarnet(CarnetClients carnet) {
 		this.carnetClient = carnet;
 		ListView.setItems(carnetClient.getClient());
@@ -62,40 +71,55 @@ public class CarnetClientController {
 		
 
 	}
-
+	/**
+	 * le Genre
+	 */
 	@FXML
 	private Label Genre;
-
+	/**
+	 * liste des clients
+	 */
 	@FXML
 	private ListView<Client> ListView;
-
+	/**
+	 * affichage des point de fidelite
+	 */
 	@FXML
 	private Label PointFid_answer;
-
 	@FXML
 	private Label adresse;
-
+	/**
+	 * affichage de l'adresse
+	 */
 	@FXML
 	private Label adresse_answer;
 
 	@FXML
 	private Label contact;
-
+	/**
+	 * affichage des contact
+	 */
 	@FXML
 	private Label contact_answer;
-
+	/**
+	 * affichage du genre
+	 */
 	@FXML
 	private Label genre_answer;
 
 	@FXML
 	private Label id;
-
+	/**
+	 * affichage de l'id
+	 */
 	@FXML
 	private Label id_answer;
 
 	@FXML
 	private Label nom;
-
+	/**
+	 * affichage du nom
+	 */
 	@FXML
 	private Label nom_answer;
 
@@ -104,18 +128,30 @@ public class CarnetClientController {
 
 	@FXML
 	private Label prenom;
-
+	/**
+	 * affichage du prenom
+	 */
 	@FXML
 	private Label prenom_answer;
-
+	/**
+	 * mise en place de la fenetre de l'appli
+	 * @param stage
+	 */
 	public void setStage(Stage stage) {
 		this.stage = stage;
 	}
-
+	/**
+	 * mise en place de la scene
+	 * @param scene
+	 */
 	public void setMainScene(Scene scene) {
 		this.mainScene = scene;
 	}
-
+	/**
+	 * modification du client
+	 * @param event
+	 * @throws IOException
+	 */
 	@FXML
 	void Modifier(ActionEvent event) throws IOException {
 		Client modified = ListView.getSelectionModel().getSelectedItem();
@@ -136,7 +172,11 @@ public class CarnetClientController {
 
 
 	}
-
+	/**
+	 * ajout du client
+	 * @param event
+	 * @throws IOException
+	 */
 	@FXML
 	void NouveauClient(ActionEvent event) throws IOException {
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../../view/AjouterClient-view.fxml"));
@@ -152,7 +192,10 @@ public class CarnetClientController {
 		controller.setClient(null);
 
 	}
-
+	/**
+	 * suppression du client
+	 * @param event
+	 */
 	@FXML
 	void Supprimer(ActionEvent event) {
 		int id = ListView.getSelectionModel().getSelectedIndex();
@@ -162,7 +205,10 @@ public class CarnetClientController {
 		carnetClient.supprimerClient(deleted);
 		ListView.getItems().remove(id);
 	}
-
+	/**
+	 * retour a la scene precedente
+	 * @param event
+	 */
 	@FXML
 	void retour(ActionEvent event) {
 		stage.setScene(mainScene);

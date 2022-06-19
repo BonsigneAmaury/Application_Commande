@@ -1,0 +1,11 @@
+fr.univartois.butinfo.ihm.GestionVentes
+fr.univartois.butinfo.ihm.GestionVentes.controller
+fr.univartois.butinfo.ihm.GestionVentes.model.article
+fr.univartois.butinfo.ihm.GestionVentes.model.client
+fr.univartois.butinfo.ihm.GestionVentes.model.commande
+fr.univartois.butinfo.ihm.GestionVentes.model.conducteur
+fr.univartois.butinfo.ihm.GestionVentes.model.gestionnaire
+fr.univartois.butinfo.ihm.GestionVentes.model.principal
+fr.univartois.butinfo.ihm.GestionVentes.model.test
+fr.univartois.butinfo.ihm.GestionVentes.model.util
+fr.univartois.butinfo.ihm.GestionVentes.model.vehicule

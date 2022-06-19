@@ -12,62 +12,109 @@ import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
+/**
+ * controller gerant l'ajout d'un client au carnet
+ * @author axelp
+ *
+ */
 public class ajouterClientController {
+	/**
+	 * la fenetre de l'appli
+	 */
 	private Stage stage;
-
+	/**
+	 * la scene de la fenetre precedente 
+	 */
 	private Scene mainScene;
-
+	/**
+	 * le client a ajouter ou modifier
+	 */
 	private Client client;
-
+	/**
+	 * mise en place de la fenetre
+	 * @param stage
+	 */
 	public void setStage(Stage stage) {
 		this.stage = stage;
 	}
-
+	/**
+	 * mise en place de la scene
+	 * @param scene
+	 */
 	public void setMainScene(Scene scene) {
 		this.mainScene = scene;
 	}
-
+	/**
+	 * le carnet de clients
+	 */
 	private CarnetClients carnetClient;
-
+	/**
+	 * mise en place du carnet de client
+	 * @param carnet
+	 */
 	public void setCarnet(CarnetClients carnet) {
 		this.carnetClient = carnet;
 	}
-
+	/**
+	 * mise en place du client a ajouter ou modifieir
+	 * @param client
+	 */
 	public void setClient(Client client) {
 		this.client = client;
 	}
-
+	/**
+	 * champs de reponse pour l'adresse
+	 */
 	@FXML
 	private TextField adresse_answer;
-
+	/**
+	 * champs de reponse pour le contact
+	 */
 	@FXML
 	private TextField contact_answer;
-
+	/**
+	 * champs de reponse pour le genre
+	 */
 	@FXML
 	private ComboBox<Genre> genre_answer;
-
+	/**
+	 * champs de reponse pour le type
+	 */
 	@FXML
 	private ComboBox<String> type_answer;
+	/**
+	 * champs de reponse pour l'id
+	 */
 
 	@FXML
 	private TextField id_answer;
-
+	/**
+	 * champs de reponse pour le nom
+	 */
 	@FXML
 	private TextField nom_answer;
-
+	/**
+	 * champs de reponse pour les point de fidelite
+	 */
 	@FXML
 	private TextField pointFid_answer;
-
+	/**
+	 * champs de reponse pour le prenom
+	 */
 	@FXML
 	private TextField prenom_answer;
-
+	/**
+	 * initialisation des comboBox
+	 */
 	@FXML
 	void initialize() {
 		genre_answer.setItems(FXCollections.observableArrayList(Genre.values()));
 		type_answer.setItems(FXCollections.observableArrayList("Particulier", "Entreprise"));
 	}
-
+	/**
+	 * ajout du client dans le carnet
+	 * @param event
+	 */
 	@FXML
 	void ajouter(ActionEvent event) {
 
@@ -96,7 +143,10 @@ public class ajouterClientController {
 		}
 		stage.setScene(mainScene);
 	}
-
+	/**
+	 * annulation, on retourne a la scene precedente
+	 * @param event
+	 */
 	@FXML
 	void annuler(ActionEvent event) {
 		stage.setScene(mainScene);

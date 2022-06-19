@@ -17,50 +17,98 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+/**
+ * controller gérant l'ajout d'article
+ * @author axelp
+ *
+ */
 public class AjouterArticleController {
+	/**
+	 * La fenetre de l'aplication
+	 */
 	private Stage stage;
+	/**
+	 * Scene de la page prescedente
+	 */
 	private Scene mainScene;
+	/**
+	 * article a modifier ou creer
+	 */
 	private Article article;
+	/**
+	 * stock d'article dans lequel on ajoute ou modifie un article
+	 */
 	private Stock stock;
 	
+	/**
+	 * mise en place du stock
+	 * @param stock
+	 */
 	public void setStock(Stock stock) {
 		this.stock = stock;
 	}
-
+	/**
+	 * mise en place de la fenetre
+	 * @param stage
+	 */
 	public void setStage(Stage stage) {
 		this.stage = stage;
 	}
+	/**
+	 * mise en place de l'article a modifier
+	 * @param article
+	 */
 	public void setArticle(Article article) {
 		this.article = article;
 	}
-
+	/**
+	 * mise en place de la scene
+	 * @param scene
+	 */
 	public void setMainScene(Scene scene) {
 		this.mainScene = scene;
 	}
-
+	
+	/**
+	 * champ de reponse pour la capacite
+	 */
     @FXML
     private TextField capacite_answer;
-
+    /**
+     * champs de reponse pour la categorie
+     */
     @FXML
     private ComboBox<String> categorie_answer;
-
+    /**
+     * champs de reponse pour la designation
+     */
     @FXML
     private TextField designation_answer;
 
     @FXML
     private TextField poids_answer;
-
+    /**
+     * champs de reponse pour le prix
+     */
     @FXML
     private TextField prix_answer;
-
+    /**
+     * champs de reponse pour la quantité
+     */
     @FXML
     private TextField quantite_answer;
+    /**
+     * initialisation des comboBox
+     */
     @FXML
 	void initialize() {
 
 		categorie_answer.setItems(FXCollections.observableArrayList("Velo", "Sacoche pour velo"));
 	}
-
+    /**
+     * ajouts d'un article dans le stock
+     * @param event
+     */
     @FXML
     void ajouter(ActionEvent event) {
 		String designation = designation_answer.getText();
@@ -87,7 +135,9 @@ public class AjouterArticleController {
 		stage.setScene(mainScene);
 
     }
-
+    /**
+     * annulation de l'ajout
+     */
     @FXML
     void annuler(ActionEvent event) {
     	stage.setScene(mainScene);
