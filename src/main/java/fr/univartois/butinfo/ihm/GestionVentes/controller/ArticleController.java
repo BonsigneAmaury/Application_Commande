@@ -151,7 +151,7 @@ public class ArticleController {
 
     }
     /**
-     * modification du article sur lequel on clique
+     * modification de l'article sur lequel on clique
      * @param event
      * @throws IOException
      */
@@ -183,7 +183,7 @@ public class ArticleController {
     	stage.setScene(mainScene);
     }
     /**
-     * supression du article selectionner
+     * supression de l'article selectionner
      * @param event
      */
     @FXML
